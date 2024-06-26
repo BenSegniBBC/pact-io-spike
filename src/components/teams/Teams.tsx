@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Team } from '../../interface/team';
+import { Team } from './interface/team';
 import { HttpService } from "../../http/Http.Service";
 import './Teams.css'
 
