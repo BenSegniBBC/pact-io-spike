@@ -1,0 +1,20 @@
+.teams-wrapper {
+    padding: 5rem 10rem;
+}
+
+.teams-wrapper ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.teams-wrapper ul li {
+    padding: 1rem .75rem;
+    background-color: #efefef;
+    margin-bottom: .5rem;
+    border: 1px solid #ccc;
+}
+
+.teams-wrapper h1 {
+    color: blue;
+}
