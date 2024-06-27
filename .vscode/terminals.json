@@ -11,6 +11,10 @@
       "name": "UI",
       "description": "Runs the UI in development mode",
       "commands": ["npm run start"]
+    },
+    {
+      "name": "Branch",
+      "description": "Branch Commits"
     }
   ]
 }
