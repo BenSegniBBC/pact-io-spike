@@ -65,7 +65,7 @@ const TeamsComponent: React.FC = () => {
             <>
                 <div className="teams-wrapper">
                     <h1>Teams:</h1>
-                    
+
                     <ul>
                         {teamsData.map((team) => (
                             <li key={team.id}>
@@ -74,7 +74,7 @@ const TeamsComponent: React.FC = () => {
                         ))}
                     </ul>
 
-                    <h2>Selected Team</h2>
+                    <h2>Selected Team:</h2>
 
                     {teamLoaded 
                         ?
