@@ -17,9 +17,7 @@ const TeamsComponent: React.FC = () => {
 
         try {
             const teamsResponse = (await HttpService.get(address));
-            const teamResponse = (await HttpService.getById(address, 1));
             setTeams(teamsResponse.data);
-            setTeam(teamResponse.data);
         } catch (error: any) {
             if (HttpService.isError(error)) {
                 setError(error.message);
