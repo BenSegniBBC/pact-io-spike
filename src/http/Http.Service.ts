@@ -3,7 +3,8 @@ import { config } from "./config/config";
 
 export class HttpService {
     public static get(address: string): Promise<AxiosResponse> {
-        const endpoint = axios.get(`${config.url}:${config.port}/${address}`);
+        const url = `${config.url}${config.port}/${address}`;
+        const endpoint = axios.get(url);
         return endpoint;
     }
 
