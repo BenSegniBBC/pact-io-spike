@@ -65,6 +65,7 @@ const TeamsComponent: React.FC = () => {
             <>
                 <div className="teams-wrapper">
                     <h1>Teams:</h1>
+                    
                     <ul>
                         {teamsData.map((team) => (
                             <li key={team.id}>
