@@ -8,6 +8,12 @@ export class HttpService {
         return endpoint;
     }
 
+    public static getById(address: string, id: number): Promise<AxiosResponse> {
+        const url = `${config.url}${config.port}/${address}/${id}`;
+        const endpoint = axios.get(url);
+        return endpoint;
+    }
+
     public static isError(error: unknown):boolean {
         return axios.isAxiosError(error)
     }
