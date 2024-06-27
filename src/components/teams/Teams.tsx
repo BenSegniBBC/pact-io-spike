@@ -29,7 +29,9 @@ const TeamsComponent: React.FC = () => {
                 setError(TeamMessageEnum.errorMessage)
             }
         } finally {
-            setIsLoading(false);
+            setTimeout(() => {
+                setIsLoading(false);
+            }, 1500)
         }
     };
 
@@ -60,11 +62,11 @@ const TeamsComponent: React.FC = () => {
     }, []);
 
     if (isLoading) {
-        return <p>{loadingTeams}</p>
+        return <p className="block loading-graphic">{loadingTeams}</p>
     }
 
     if (error) {
-        return <p>Error: {error}</p>
+        return <p className="block error-message">Error: {error}</p>
     }
 
     if (teamsData) {
@@ -83,9 +85,9 @@ const TeamsComponent: React.FC = () => {
                     <h2>Selected Team</h2>
 
                     {teamLoaded ?
-                        <div className="selection-made">
+                        <div className="block selection-made">
                             <strong>{teamData?.id}</strong> - {teamData?.name}
-                        </div> : <span className="no-selection">{noTeamsSelected}</span>
+                        </div> : <span className="block no-selection">{noTeamsSelected}</span>
                     }
                 </div>
             </>

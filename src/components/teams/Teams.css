@@ -38,18 +38,28 @@ button:hover {
     background-color: purple;
 }
 
-.selection-made {
+.block {
     display: block;
-    background-color: #efefef;
-    padding: 3rem;
-    color: #333;
+    color: white;
     text-transform: uppercase;
+    padding: 3rem;
+    margin: 0;
+}
+
+.selection-made {
+    background-color: #efefef;
+    color: #333;
 }
 
 .no-selection {
-    display: block;
     background-color: purple;
-    padding: 3rem;
-    color: white;
-    text-transform: uppercase;
+}
+
+.error-message {
+    background-color: black;
+}
+
+.loading-graphic {
+    background-color: greenyellow;
+    color: black;
 }
