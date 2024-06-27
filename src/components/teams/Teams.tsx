@@ -69,7 +69,7 @@ const TeamsComponent: React.FC = () => {
                     <ul>
                         {teamsData.map((team) => (
                             <li key={team.id}>
-                                {team.id} - {team.name} <button onClick={() => getTeam(team.id)}>Get Team</button>
+                                {team.id} - {team.name} <button onClick={() => getTeam(team.id)}>Select Team</button>
                             </li>
                         ))}
                     </ul>
