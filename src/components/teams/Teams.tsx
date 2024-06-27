@@ -34,7 +34,6 @@ const TeamsComponent: React.FC = () => {
     const loadingTeams = TeamMessageEnum.teamsLoading;
     const noTeamsData = TeamMessageEnum.noTeamsData;
 
-
     useEffect(() => {
         getTeams();
     }, []);

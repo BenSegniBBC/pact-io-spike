@@ -1,11 +1,6 @@
 import React from 'react';
-import { Team } from '../interface/team';
+import { Team, TeamData } from '../interface/team';
 import { TeamMessageEnum } from '../teams/enum/team.message.enum';
-
-interface TeamData {
-    teamData: Team | null;
-    teamLoaded: boolean;
-}
 
 const TeamComponent: React.FC<TeamData> = ({ teamData, teamLoaded }) => {
     const noTeamsSelected = TeamMessageEnum.noTeamsSelected;

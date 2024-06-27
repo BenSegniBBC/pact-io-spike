@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
-import { Team } from '../interface/team';
+import { Team, TeamsData } from '../interface/team';
 import { HttpService } from '../../http/Http.Service';
 import { TeamMessageEnum } from '../teams/enum/team.message.enum';
 import TeamComponent from '../team/Team';
-
-interface TeamsData {
-    teamsData: Team[];
-}
 
 const TeamsListComponent: React.FC<TeamsData> = ({ teamsData }) => {
     const [teamLoaded, setTeamLoaded] = useState(false);
