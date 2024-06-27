@@ -1,0 +1,16 @@
+{
+  "autorun": false,
+  "terminals": [
+    {
+      "name": "Server",
+      "description": "Run Mock Server",
+      "focus": true,
+      "commands": ["npm run db"]
+    },
+    {
+      "name": "UI",
+      "description": "Runs the UI in development mode",
+      "commands": ["npm run start"]
+    }
+  ]
+}
