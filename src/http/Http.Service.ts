@@ -2,16 +2,14 @@ import axios, { AxiosResponse } from "axios";
 import { config } from "./config/config";
 
 export class HttpService {
+    private static url = `${config.url}${config.port}`;
+
     public static get(address: string): Promise<AxiosResponse> {
-        const url = `${config.url}${config.port}/${address}`;
-        const endpoint = axios.get(url);
-        return endpoint;
+        return axios.get(`${HttpService.url}/${address}`);
     }
 
     public static getById(address: string, id: number): Promise<AxiosResponse> {
-        const url = `${config.url}${config.port}/${address}/${id}`;
-        const endpoint = axios.get(url);
-        return endpoint;
+        return axios.get(`${HttpService.url}/${address}/${id}`);
     }
 
     public static isError(error: unknown):boolean {
