@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Team, TeamsData } from '../interface/team';
-import { HttpService } from '../../http/Http.Service';
+import  HttpService from '../../http/Http.Service';
 import { TeamMessageEnum } from '../teams/enum/team.message.enum';
 import TeamComponent from '../team/Team';
 
