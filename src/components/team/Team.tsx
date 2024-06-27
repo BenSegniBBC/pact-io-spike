@@ -1,5 +1,5 @@
 import React from 'react';
-import { Team, TeamData } from '../interface/team';
+import { TeamData } from '../interface/team';
 import { TeamMessageEnum } from '../teams/enum/team.message.enum';
 
 const TeamComponent: React.FC<TeamData> = ({ teamData, teamLoaded }) => {
