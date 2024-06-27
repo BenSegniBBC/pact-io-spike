@@ -13,6 +13,11 @@
       "commands": ["npm run start"]
     },
     {
+      "name": "Test",
+      "description": "Unit Tests",
+      "commands": ["npm run test"]
+    },
+    {
       "name": "Branch",
       "description": "Branch Commits"
     }

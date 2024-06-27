@@ -23,6 +23,7 @@
     "eject": "react-scripts eject",
     "db": "npx json-server --port 8000 db.json"
   },
+  "type": "module",
   "eslintConfig": {
     "extends": [
       "react-app",

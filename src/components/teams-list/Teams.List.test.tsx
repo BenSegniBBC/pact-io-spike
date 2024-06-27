@@ -1,8 +1,9 @@
 import { render, screen } from "@testing-library/react";
 import TeamsListComponent from "./Teams.List";
+import { teamsMock } from "../mocks/teams.mock";
 
 test('renders teams componeent', () => {
-    render(<TeamsListComponent teamsData={[]} />);
-    const noDataMessage = screen.getByText(/No Team Selected/);
-    expect(noDataMessage).toBeInTheDocument();
+    render(<TeamsListComponent teamsData={teamsMock} />);
+    const teamName = screen.getByText(/Chelsea/);
+    expect(teamName).toBeInTheDocument();
 });
