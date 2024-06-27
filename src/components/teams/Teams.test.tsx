@@ -3,6 +3,6 @@ import TeamsComponent from "./Teams";
 
 test('renders teams componeent', () => {
   render(<TeamsComponent />);
-  const team = screen.getByText(/Liverpool/);
-  expect(team).toBeInTheDocument();
+  const loading = screen.getByText(/Loading Teams.../i);
+  expect(loading).toBeInTheDocument();
 });

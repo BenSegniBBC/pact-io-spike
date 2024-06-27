@@ -23,7 +23,11 @@
     "eject": "react-scripts eject",
     "db": "npx json-server --port 8000 db.json"
   },
-  "type": "module",
+  "jest": {
+    "moduleNameMapper": {
+      "^axios$": "axios/dist/node/axios.cjs"
+    }
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
