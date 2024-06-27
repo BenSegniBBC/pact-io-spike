@@ -17,7 +17,9 @@ const TeamsComponent: React.FC = () => {
 
         try {
             const teamsResponse = (await HttpService.get(address));
+            const teamResponse = (await HttpService.getById(address, 1));
             setTeams(teamsResponse.data);
+            setTeam(teamResponse.data);
         } catch (error: any) {
             if (HttpService.isError(error)) {
                 setError(error.message);
@@ -63,24 +65,20 @@ const TeamsComponent: React.FC = () => {
             <>
                 <div className="teams-wrapper">
                     <h1>Teams:</h1>
-
                     <ul>
                         {teamsData.map((team) => (
                             <li key={team.id}>
-                                {team.id} - {team.name} <button onClick={() => getTeam(team.id)}>Select Team</button>
+                                {team.id} - {team.name} <button onClick={() => getTeam(team.id)}>Get Team</button>
                             </li>
                         ))}
                     </ul>
 
-                    <h2>Selected Team:</h2>
+                    <h2>Selected Team</h2>
 
-                    {teamLoaded 
-                        ?
+                    {teamLoaded ?
                         <div className="selection-made">
                             <strong>{teamData?.id}</strong> - {teamData?.name}
-                        </div> 
-                        : 
-                        <div className="no-selection">No Team Selected</div>
+                        </div> : <span className="no-selection">No Team Selected</span>
                     }
                 </div>
             </>
