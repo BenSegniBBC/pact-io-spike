@@ -1,5 +1,5 @@
 export interface Team {
-    id: number;
+    id: string;
     name: 'Liverpool' | 'Chelsea' | 'Arsenal'
 }
 

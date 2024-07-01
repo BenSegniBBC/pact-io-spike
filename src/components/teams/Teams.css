@@ -55,6 +55,10 @@ button:hover {
     background-color: purple;
 }
 
+.no-data {
+    background-color: cornflowerblue;
+}
+
 .error-message {
     background-color: black;
 }

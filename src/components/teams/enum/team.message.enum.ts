@@ -1,5 +1,5 @@
 export enum TeamMessageEnum {
-    address = 'teams',
+    teamsAddress = 'teams',
     errorMessage = 'Unexpected Error',
     teamsLoading = 'Loading Teams...',
     noTeamsSelected = 'No Team Selected',

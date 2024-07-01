@@ -10,14 +10,16 @@ const TeamsListComponent: React.FC<TeamsData> = ({ teamsData }) => {
 
     const [error, setError] = useState('');
 
-    const getTeam = async (id: number) => {
+    const httpService = new HttpService();
+
+    const getTeam = async (id: string) => {
         setTeamLoaded(false);
 
         try {
-            const teamResponse = (await HttpService.getById(HttpService.address, id));
+            const teamResponse = (await httpService.getById(httpService.teamsAddress, id));
             setTeam(teamResponse.data);
         } catch (error: any) {
-            if (HttpService.isError(error)) {
+            if (httpService.isError(error)) {
                 setError(error.message);
             } else {
                 setError(TeamMessageEnum.errorMessage)

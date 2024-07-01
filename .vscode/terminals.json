@@ -18,6 +18,11 @@
       "commands": ["npm run test"]
     },
     {
+      "name": "Pact Test",
+      "description": "Pact Tests",
+      "commands": ["npm run test:pact"]
+    },
+    {
       "name": "Branch",
       "description": "Branch Commits"
     }

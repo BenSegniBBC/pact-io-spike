@@ -1,0 +1,55 @@
+{
+  "consumer": {
+    "name": "ReactFC_UI"
+  },
+  "interactions": [
+    {
+      "description": "get all teams",
+      "providerState": "All Teams Exist",
+      "request": {
+        "method": "GET",
+        "path": "/teams"
+      },
+      "response": {
+        "body": [
+          {
+            "id": "1",
+            "name": "Liverpool"
+          },
+          {
+            "id": "2",
+            "name": "Chelsea"
+          },
+          {
+            "id": "3",
+            "name": "Arsenal"
+          }
+        ],
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
+          }
+        },
+        "status": 200
+      }
+    }
+  ],
+  "metadata": {
+    "pact-js": {
+      "version": "13.1.0"
+    },
+    "pactRust": {
+      "ffi": "0.4.21",
+      "models": "1.2.2"
+    },
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  },
+  "provider": {
+    "name": "ReactFC_API"
+  }
+}

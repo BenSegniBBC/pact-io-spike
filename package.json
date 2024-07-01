@@ -6,7 +6,7 @@
     "@pact-foundation/pact": "^13.1.0",
     "@pact-foundation/pact-node": "^10.18.0",
     "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
+    "@testing-library/react": "^15.0.6",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.101",
@@ -21,10 +21,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage",
     "eject": "react-scripts eject",
     "db": "npx json-server --port 8000 db.json",
-    "test:pact": "react-scripts test --runInBand --setupFiles ./pact/setup.js --setupFilesAfterEnv ./pact/jest-wrapper.js --testMatch \"**/*.test.pact.js\""
+    "test:pact": "react-scripts test --runInBand --setupFiles ./pact/setup.js --testMatch \"**/*.test.pact.js\""
   },
   "jest": {
     "moduleNameMapper": {
