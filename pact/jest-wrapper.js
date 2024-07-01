@@ -1,7 +1,11 @@
-beforeAll((done) => {
-    global.provider.setup().then(() => done());
+import reactProvider from "./setup";
+
+beforeAll(async () => {
+    reactProvider.setup();
 });
 
-afterAll((done) => {
+// afterAll((done) => {
+afterAll(async () => {
     global.provider.finalize().then(() => done());
+    // global.provider.finalize().then(() => done());
 });

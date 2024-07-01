@@ -1,16 +1,14 @@
-const path = require('path');
-const Pact = require('@pact-foundation/pact').Pact;
+import path from 'path';
+import { PactV3, SpecificationVersion, } from "@pact-foundation/pact";
 
-global.port = 8080;
-global.provider = new Pact({
-    cors: true,
-    port: global.port,
-    log: path.resolve(process.cwd(), 'logs', 'pact.log'),
-    loglevel: 'debug',
-    dir: path.resolve(process.cwd(), 'pacts'),
-    spec: 2,
-    pactfileWriteMode: 'update',
-    consumer: 'teams-ui',
-    provider: 'teams-provider',
-    host: '127.0.0.1'
-});
+const reactProvider = new PactV3({
+    consumer: "ReactFC_UI",
+    provider: "ReactFC_API",
+    log: path.resolve(process.cwd(), "logs", "pact.log"),
+    logLevel: "warn",
+    dir: path.resolve(process.cwd(), "pacts"),
+    spec: SpecificationVersion.SPECIFICATION_VERSION_V2,
+    host: "127.0.0.1"
+  });
+
+  export default reactProvider;
