@@ -1,7 +1,7 @@
 import { teamsMock } from '../../components/mocks/teams.mock';
 import reactProvider from '../../../pact/setup';
 import HttpService from '../../http/Http.Service';
-import { like, somethingLike } from '@pact-foundation/pact/src/dsl/matchers';
+import { like } from '@pact-foundation/pact/src/dsl/matchers';
 
 
 describe('The ReactFC API', () => {

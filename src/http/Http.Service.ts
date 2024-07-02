@@ -23,7 +23,6 @@ export default class HttpService {
 
     public getById(address: string, id: string): Promise<AxiosResponse<Team>> {
         const url = `${HttpService.url}/${address}/${id}`;
-        console.log(url);
         return axios.get(url);
     }
 
