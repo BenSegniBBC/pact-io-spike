@@ -3,6 +3,7 @@ import { Team, TeamsData } from '../interface/team';
 import  HttpService from '../../http/Http.Service';
 import { TeamMessageEnum } from '../teams/enum/team.message.enum';
 import TeamComponent from '../team/Team';
+import './Teams.List.css';
 
 const TeamsListComponent: React.FC<TeamsData> = ({ teamsData }) => {
     const [teamLoaded, setTeamLoaded] = useState(false);
@@ -40,7 +41,7 @@ const TeamsListComponent: React.FC<TeamsData> = ({ teamsData }) => {
             <ul>
                 {teamsData.map((team) => (
                     <li key={team.id}>
-                        {team.id} - {team.name} <button onClick={() => getTeam(team.id)}>Get Team</button>
+                        <span className='team'>{team.id} - {team.name}</span> <span className='location'>Location: {team.location}</span> <button onClick={() => getTeam(team.id)}>Get Team</button>
                     </li>
                 ))}
             </ul>

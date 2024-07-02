@@ -3,14 +3,17 @@ import { Team } from "../interface/team";
 export const teamsMock: Team[] = [
     {
         id: '1',
-        name: 'Liverpool'
+        name: 'Liverpool',
+        location: 'North'
     },
     {
         id: '2',
-        name: 'Chelsea'
+        name: 'Chelsea',
+        location: 'South'
     },
     {
         id: '3',
-        name: 'Arsenal'
+        name: 'Arsenal',
+        location: 'South'
     }
 ]

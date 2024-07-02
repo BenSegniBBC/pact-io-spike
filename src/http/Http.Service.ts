@@ -1,7 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 import { config } from "./config/config";
 import { TeamMessageEnum } from "../components/teams/enum/team.message.enum";
-import React from "react"; 
 import { Team } from "../components/interface/team";
 
 export default class HttpService {
@@ -23,7 +22,9 @@ export default class HttpService {
     }
 
     public getById(address: string, id: string): Promise<AxiosResponse<Team>> {
-        return axios.get(`${HttpService.url}/${address}/${id}`);
+        const url = `${HttpService.url}/${address}/${id}`;
+        console.log(url);
+        return axios.get(url);
     }
 
     public isError(error: unknown): boolean {

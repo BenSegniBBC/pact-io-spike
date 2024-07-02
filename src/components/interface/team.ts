@@ -1,6 +1,7 @@
 export interface Team {
     id: string;
-    name: 'Liverpool' | 'Chelsea' | 'Arsenal'
+    name: string,
+    location: 'North' | 'South'
 }
 
 export interface TeamsData {

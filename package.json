@@ -51,6 +51,7 @@
   },
   "devDependencies": {
     "axios": "^1.7.2",
-    "json-server": "^1.0.0-beta.1"
+    "json-server": "^1.0.0-beta.1",
+    "rxjs": "^7.8.1"
   }
 }

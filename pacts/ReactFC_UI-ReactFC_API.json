@@ -4,6 +4,45 @@
   },
   "interactions": [
     {
+      "description": "Get Request for Team with Id 5",
+      "providerState": "Team with Id 5 does not exist",
+      "request": {
+        "method": "GET",
+        "path": "/teams/5"
+      },
+      "response": {
+        "body": [],
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "status": 200
+      }
+    },
+    {
+      "description": "Get Team with Id 3",
+      "providerState": "Team with Id 3 exists",
+      "request": {
+        "method": "GET",
+        "path": "/teams/3"
+      },
+      "response": {
+        "body": {
+          "id": "3",
+          "location": "South",
+          "name": "Arsenal"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
+          }
+        },
+        "status": 200
+      }
+    },
+    {
       "description": "get all teams",
       "providerState": "All Teams Exist",
       "request": {
@@ -14,14 +53,17 @@
         "body": [
           {
             "id": "1",
+            "location": "North",
             "name": "Liverpool"
           },
           {
             "id": "2",
+            "location": "South",
             "name": "Chelsea"
           },
           {
             "id": "3",
+            "location": "South",
             "name": "Arsenal"
           }
         ],

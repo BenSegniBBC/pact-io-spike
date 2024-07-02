@@ -4,29 +4,51 @@ import HttpService from "../../http/Http.Service";
 import './Teams.css'
 import { TeamMessageEnum } from "./enum/team.message.enum";
 import TeamsListComponent from "../teams-list/Teams.List";
+import { Observable, map, mergeMap, of, toArray } from 'rxjs';
 
 const TeamsComponent: React.FC = () => {
     const [isLoading, setIsLoading] = useState(false);
-
-    const [teamsData, setTeams] = useState<Team[] | null>(null);
-
+    const [teamsData, setTeams] = useState<Team[]>([]);
+    let teams$: Observable<Team[]>;
     const [error, setError] = useState('');
-
     const httpService = new HttpService();
+
+    const southernTeams = ["Chelsea", 'Arsenal']
+
+    const checkLocation = (name: string) => southernTeams.includes(name) ? 
+    TeamMessageEnum.south : 
+    TeamMessageEnum.north;
 
     const getTeams = async () => {
         setIsLoading(true);
+
         try {
-            const teamsResponse = (await httpService.get(httpService.teamsAddress));
-            setTeams(teamsResponse.data);
+            teams$ = of((await httpService.get(httpService.teamsAddress)).data).pipe(
+                mergeMap(teams => teams),
+                map(team =>
+                    ({
+                        ...team,
+                        name: `${team.name} Football Club`,
+                        location: checkLocation(team.name)
+                    } as Team)),
+                toArray()
+            );
+
+            teams$.subscribe({
+                next: (res) => setTeams(res as Team[]),
+                error: (error) => {
+                    httpService.isError(error) ? 
+                    setError(error.message) : 
+                    setError(TeamMessageEnum.errorMessage)
+                },
+                complete: () => setIsLoading(false)
+            });
         } catch (error: any) {
-            if (httpService.isError(error)) {
-                setError(error.message);
-            } else {
-                setError(TeamMessageEnum.errorMessage)
-            }
+            httpService.isError(error) ? 
+                    setError(error.message) : 
+                    setError(TeamMessageEnum.errorMessage)
         } finally {
-            setIsLoading(false);
+            setIsLoading(false)
         }
     };
 
